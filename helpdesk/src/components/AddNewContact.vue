@@ -8,7 +8,7 @@
           <div class="card col-md-8 col-xxl-8 overflow-hidden">
             <div class="bg-primary bg-soft">
                   <div class="text-primary p-3">
-                    <h5 class="text-primary text-center">Create New Ticket!</h5> 
+                    <h5 class="text-primary text-center"> New Contact!</h5> 
                 </div>
             </div>
             <div class="card-body pt-0 mt-3">
@@ -28,51 +28,21 @@
                         <label for="formrow-company-input" class="form-label">Company</label>
                         <input type="text" class="form-control" id="formrow-company-input">
                     </div>
-                    <div class="mb-3">
-                        <label for="formrow-firstname-input" class="form-label" required>Subject</label>
-                        <input type="text" class="form-control" id="formrow-firstname-input">
-                    </div>
-                    <div class="mb-3">
-                        <label for="formrow-inputState" class="form-label">Type</label>
-                        <select id="formrow-inputState" class="form-select">
-                            <option>Refund</option>
-                            <option>Question</option>
-                            <option>Satisfaction</option>
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label for="formrow-inputState" class="form-label">Source</label>
-                        <select id="formrow-inputState" class="form-select">
-                            <option>Phone</option>
-                            <option>Form</option>
-                            <option>Email</option>
-
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label for="formrow-group" class="form-label">Description</label>
-                        <div>
-                        <textarea required class="form-control" rows="8"></textarea>
-                        </div>
-                    </div>
                     <div>
                         <a
                             href="javascript: void(0);"
-                            class="btn btn-primary waves-effect waves-light w-md" type="submit"
-                            >Add Ticket <i class="mdi mdi-arrow-right ms-1"></i></a>
+                            class="btn form-btn btn-primary waves-effect waves-light w-md" type="submit"
+                            >Create<i class="mdi mdi-arrow-right ms-1"></i></a>
+                            <a
+                            href="javascript: void(0);"
+                            class="btn form-btn mr-3 btn-secondary waves-effect waves-light w-md" type="submit"
+                            >Cancel <i class="fa fa-ban p-1"></i></a>
                     </div>
                 </form>
 
             </div>
           </div>
-                <!-- col 2 -->
-            <div class="card col-md-4  col-xxl-4 overflow-hidden">
-                    <div class="bg-primary bg-soft">
-                  <div class="text-primary p-3">
-                    <h5 class="text-primary text-center">Create New Ticket!</h5> 
-                </div>
-            </div>
-            </div>
+               
 
             </div>
         </div>
@@ -93,5 +63,9 @@ export default {
 }
 .required{
     font-size: 9px;
+}
+.form-btn{
+    float: right;
+     margin-right: 5px;
 }
 </style>

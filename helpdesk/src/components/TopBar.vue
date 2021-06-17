@@ -85,8 +85,9 @@
                 <router-link to="/addnewticket">
                         <a class="dropdown-item">Add new Ticket</a>
                 </router-link>
+                <router-link to="/addnewcontact">
                         <a class="dropdown-item" href="#">New Contact</a>
-
+                </router-link>
                     </div>
                 
             </div>

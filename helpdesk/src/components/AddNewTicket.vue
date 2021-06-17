@@ -7,7 +7,7 @@
           <div class="card col-md-8 col-xxl-8 overflow-hidden">
             <div class="bg-primary bg-soft">
                   <div class="text-primary p-3">
-                    <h5 class="text-primary text-center">Create New Ticket!</h5> 
+                    <h5 class="text-primary text-center">New Ticket!</h5> 
                 </div>
             </div>
             <div class="card-body pt-0 mt-3">
@@ -89,14 +89,26 @@
                     <div>
                         <a
                             href="javascript: void(0);"
-                            class="btn btn-primary waves-effect waves-light w-md" type="submit"
-                            >Add Ticket <i class="mdi mdi-arrow-right ms-1"></i
+                            class="btn form-btn btn-primary waves-effect waves-light w-md" type="submit"
+                            >Create<i class="mdi mdi-arrow-right ms-1"></i
                         ></a>
+                        <a
+                            href="javascript: void(0);"
+                            class="btn form-btn mr-3 btn-secondary waves-effect waves-light w-md" type="submit"
+                            >Cancel <i class="fa fa-ban p-1"></i></a>
                     </div>
                 </form>
 
             </div>
           </div>
+           <!-- col 2 -->
+            <div class="card col-md-4  col-xxl-4 overflow-hidden">
+                    <div class="bg-primary bg-soft">
+                  <div class="text-primary p-3">
+                    <h5 class="text-primary text-center">Contact Details</h5> 
+                </div>
+            </div>
+            </div>
             </div>
         </div>
         <!-- container-fluid -->
@@ -116,5 +128,9 @@ export default {
 }
 .required{
     font-size: 9px;
+}
+.form-btn{
+    float: right;
+     margin-right: 5px;
 }
 </style>

@@ -10,20 +10,20 @@ const routes = [
   {
     path: '/tickets',
     name: 'Tickets',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Tickets.vue')
+    component: () => import(/* webpackChunkName: "Tickets" */ '../views/Tickets.vue')
   },
   {
     path: '/addnewticket',
     name: 'AddNewTicket',
     // lazy loading
-    component: () => import(/* webpackChunkName: "about" */ '../views/NewTicket.vue')
+    component: () => import(/* webpackChunkName: "NewTicket" */ '../views/NewTicket.vue')
   },
-  // {
-  //   path: '/addnewcontact',
-  //   name: 'AddNewContact',
-  //   // lazy loading
-  //   component: () => import(/* webpackChunkName: "about" */ '../views/NewContact.vue')
-  // }
+  {
+    path: '/addnewcontact',
+    name: 'AddNewContact',
+    // lazy loading
+    component: () => import(/* webpackChunkName: "NewContact" */ '../views/NewContact.vue')
+  }
 ]
 
 const router = createRouter({
