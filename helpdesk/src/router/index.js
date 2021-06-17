@@ -17,7 +17,13 @@ const routes = [
     name: 'AddNewTicket',
     // lazy loading
     component: () => import(/* webpackChunkName: "about" */ '../views/NewTicket.vue')
-  }
+  },
+  // {
+  //   path: '/addnewcontact',
+  //   name: 'AddNewContact',
+  //   // lazy loading
+  //   component: () => import(/* webpackChunkName: "about" */ '../views/NewContact.vue')
+  // }
 ]
 
 const router = createRouter({

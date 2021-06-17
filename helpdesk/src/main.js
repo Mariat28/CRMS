@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'jquery'
+import 'popper.js'
 import './assets/css/app.css';
 import './assets/css/bootstrap.min.css';
 import './assets/css/app.min.css'

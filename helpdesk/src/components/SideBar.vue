@@ -1,7 +1,7 @@
 <template>
    <!-- ========== Left Sidebar Start ========== -->
 <div class="vertical-menu">
-    <div data-simplebar data-sidebar="dark" class="h-100">
+    <div data-simplebar data-sidebar="dark" class="h-100 ">
 
         <!--- Sidemenu -->
         <div id="sidebar-menu">
@@ -349,7 +349,8 @@
 </template>
 <script>
 export default {
-    name:'SideBar'
+    name:'SideBar',
+
 }
 </script>
 <style scoped>
@@ -358,9 +359,6 @@ export default {
 }
 .caret{
     margin-left: 70px;
-}
-.router-link-active{
-    /*background-color: #435fe3;*/
 }
 .router-link-active span{
     color: white;

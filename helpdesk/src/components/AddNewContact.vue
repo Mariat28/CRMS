@@ -4,6 +4,7 @@
       <div class="page-content">
         <div class="container-fluid">
             <div class="row">
+                <!-- col 1 -->
           <div class="card col-md-8 col-xxl-8 overflow-hidden">
             <div class="bg-primary bg-soft">
                   <div class="text-primary p-3">
@@ -48,38 +49,6 @@
 
                         </select>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-4 ">
-                            <div class="mb-3">
-                                <label for="formrow-inputCity" class="form-label">status</label>
-                                <input type="text" class="form-control" id="formrow-inputCity">
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="mb-3">
-                                <label for="formrow-inputState" class="form-label">Priority</label>
-                                <select id="formrow-inputState" class="form-select">
-                                    <option selected>Low</option>
-                                    <option>High</option>
-                                    <option>Medium</option>
-                                    <option>Urgent</option>
-                                </select>
-                            </div>
-                        </div>
-                        
-                        <div class="col-lg-4">
-                            <div class="mb-3">
-                                <label for="formrow-group" class="form-label">Group</label>
-                                <select id="formrow-group" class="form-select">
-                                    <option selected>Escalations</option>
-                                    <option>Customer Support</option>
-                                    <option>Medium</option>
-                                    <option>Urgent</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="mb-3">
                         <label for="formrow-group" class="form-label">Description</label>
                         <div>
@@ -90,13 +59,21 @@
                         <a
                             href="javascript: void(0);"
                             class="btn btn-primary waves-effect waves-light w-md" type="submit"
-                            >Add Ticket <i class="mdi mdi-arrow-right ms-1"></i
-                        ></a>
+                            >Add Ticket <i class="mdi mdi-arrow-right ms-1"></i></a>
                     </div>
                 </form>
 
             </div>
           </div>
+                <!-- col 2 -->
+            <div class="card col-md-4  col-xxl-4 overflow-hidden">
+                    <div class="bg-primary bg-soft">
+                  <div class="text-primary p-3">
+                    <h5 class="text-primary text-center">Create New Ticket!</h5> 
+                </div>
+            </div>
+            </div>
+
             </div>
         </div>
         <!-- container-fluid -->
