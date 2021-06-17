@@ -38,10 +38,25 @@
                         </div>
                         <div class="col">
                         <div style="display:flex; align-items:center; justify-content:center;" class="col">
-                            <div style="display: flex; flex-direction: column">
-                                <div class="priority">Low</div>
-                                <div class="priority">Accounting</div>
-                                <div class="priority">Open</div>
+                            <div class="card-body">
+                                <div style="display: flex; flex-direction: column">
+                                <select style="width: 120px; outline: none; border: none;" class="custom-select">
+                                    <option selected>Low</option>
+                                    <option value="1">Medium</option>
+                                    <option value="2">High</option>
+                                </select>
+                                <select style="width: 120px; outline: none; border: none;" class="custom-select">
+                                    <option selected>Accounting</option>
+                                    <option value="1">Technical</option>
+                                    <option value="2">Finance</option>
+                                </select>
+                                <select style="width: 120px; outline: none; border: none;" class="custom-select">
+                                    <option selected>Open</option>
+                                    <option value="1">Pending</option>
+                                    <option value="2">Forwarded</option>
+                                    <option value="3">Closed</option>
+                                </select>
+                            </div>
                             </div>
                         </div> 
                         </div>
