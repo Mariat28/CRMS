@@ -1,7 +1,7 @@
 <template>
    <!-- ========== Left Sidebar Start ========== -->
 <div class="vertical-menu">
-    <div data-simplebar class="h-100">
+    <div data-simplebar data-sidebar="dark" class="h-100">
 
         <!--- Sidemenu -->
         <div id="sidebar-menu">
@@ -10,54 +10,34 @@
                 <li class="menu-title" key="t-menu">Menu</li>
 
                 <li>
+                    <router-link to="/">
                     <a href="javascript: void(0);" class="waves-effect">
                         <i class="bx bx-home-circle"></i><span class="badge rounded-pill bg-info float-end">04</span>
                         <span key="t-dashboards">Dashboards</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="index.html" key="t-default">Default</a></li>
-                        <li><a href="dashboard-saas.html" key="t-saas">Saas</a></li>
-                        <li><a href="dashboard-crypto.html" key="t-crypto">Crypto</a></li>
-                        <li><a href="dashboard-blog.html" key="t-blog">Blog</a></li>
-                    </ul>
+                    </a></router-link>
                 </li>
 
                 <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                     <router-link to="/tickets">
+                    <a href="javascript: void(0);" class=" waves-effect">
+                        <font-awesome-icon icon="ticket-alt" class="icons" />
+                        <span key="t-layouts">Tickets<font-awesome-icon icon="caret-right" class="caret"/>
+                    </span>
+                    </a></router-link>
+                    
+                </li>
+                 <li>
+                     <router-link to="/settings">
+                    <a href="javascript: void(0);" class=" waves-effect">
                         <i class="bx bx-layout"></i>
-                        <span key="t-layouts">Layouts</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="true">
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow" key="t-vertical">Vertical</a>
-                            <ul class="sub-menu" aria-expanded="true">
-                                <li><a href="layouts-light-sidebar.html" key="t-light-sidebar">Light Sidebar</a></li>
-                                <li><a href="layouts-compact-sidebar.html" key="t-compact-sidebar">Compact Sidebar</a></li>
-                                <li><a href="layouts-icon-sidebar.html" key="t-icon-sidebar">Icon Sidebar</a></li>
-                                <li><a href="layouts-boxed.html" key="t-boxed-width">Boxed Width</a></li>
-                                <li><a href="layouts-preloader.html" key="t-preloader">Preloader</a></li>
-                                <li><a href="layouts-colored-sidebar.html" key="t-colored-sidebar">Colored Sidebar</a></li>
-                                <li><a href="layouts-scrollable.html" key="t-scrollable">Scrollable</a></li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow" key="t-horizontal">Horizontal</a>
-                            <ul class="sub-menu" aria-expanded="true">
-                                <li><a href="layouts-horizontal.html" key="t-horizontal">Horizontal</a></li>
-                                <li><a href="layouts-hori-topbar-light.html" key="t-topbar-light">Topbar light</a></li>
-                                <li><a href="layouts-hori-boxed-width.html" key="t-boxed-width">Boxed width</a></li>
-                                <li><a href="layouts-hori-preloader.html" key="t-preloader">Preloader</a></li>
-                                <li><a href="layouts-hori-colored-header.html" key="t-colored-topbar">Colored Header</a></li>
-                                <li><a href="layouts-hori-scrollable.html" key="t-scrollable">Scrollable</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                        <span key="t-layouts">Settings</span><font-awesome-icon icon="cogs" class="dash-icons"/>
+                    </a></router-link>
+                    
                 </li>
 
-                <li class="menu-title" key="t-apps">Apps</li>
+                <!-- <li class="menu-title" key="t-apps">Apps</li> -->
 
-                <li>
+                <!-- <li>
                     <a href="calendar.html" class="waves-effect">
                         <i class="bx bx-calendar"></i>
                         <span key="t-calendar">Calendar</span>
@@ -110,9 +90,9 @@
                         <li><a href="crypto-kyc-application.html" key="t-kyc">KYC Application</a></li>
                         <li><a href="crypto-ico-landing.html" key="t-ico">ICO Landing</a></li>
                     </ul>
-                </li>
+                </li> -->
 
-                <li>
+                <!-- <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-envelope"></i>
                         <span key="t-email">Email</span>
@@ -193,9 +173,9 @@
                         <li><a href="blog-grid.html" key="t-blog-grid">Blog Grid</a></li>
                         <li><a href="blog-details.html" key="t-blog-details">Blog Details</a></li>
                     </ul>
-                </li>
+                </li> -->
 
-                <li class="menu-title" key="t-pages">Pages</li>
+                <!-- <li class="menu-title" key="t-pages">Pages</li>
 
                 <li>
                     <a href="javascript: void(0);" class="waves-effect">
@@ -268,9 +248,9 @@
                         <li><a href="ui-rating.html" key="t-rating">Rating</a></li>
                         <li><a href="ui-notifications.html" key="t-notifications">Notifications</a></li>
                     </ul>
-                </li>
+                </li> -->
 
-                <li>
+                <!-- <li>
                     <a href="javascript: void(0);" class="waves-effect">
                         <i class="bx bxs-eraser"></i>
                         <span class="badge rounded-pill bg-danger float-end">10</span>
@@ -359,7 +339,7 @@
                             </ul>
                         </li>
                     </ul>
-                </li>
+                </li> -->
 
             </ul>
         </div>
@@ -367,3 +347,32 @@
     </div>
 </div>
 </template>
+<script>
+export default {
+    name:'SideBar'
+}
+</script>
+<style scoped>
+.dash-icons{
+    margin-left: 50px;
+}
+.caret{
+    margin-left: 70px;
+}
+.router-link-active{
+    background-color: #435fe3;
+}
+.router-link-active span{
+    color: white;
+}
+.router-link-active .icons{
+    color: white;
+}
+.icons{
+  margin-right: 10px;
+    font-size: 20px;
+}
+.router-link-active .bx{
+color: white;
+}
+</style>
