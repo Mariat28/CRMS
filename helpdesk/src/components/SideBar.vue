@@ -360,7 +360,7 @@ export default {
     margin-left: 70px;
 }
 .router-link-active{
-    background-color: #435fe3;
+    /*background-color: #435fe3;*/
 }
 .router-link-active span{
     color: white;
@@ -369,7 +369,8 @@ export default {
     color: white;
 }
 .icons{
-  margin-right: 10px;
+  margin-right: 10px !important;
+  margin-left: -20px;
     font-size: 20px;
 }
 .router-link-active .bx{
