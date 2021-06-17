@@ -100,7 +100,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .content {
-  margin-left: 240px;
+  margin-left: 120px;
 }
 .required{
     font-size: 9px;
