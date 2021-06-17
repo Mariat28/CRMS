@@ -12,8 +12,8 @@
                 <li>
                     <router-link to="/">
                     <a href="javascript: void(0);" class="waves-effect">
-                        <font-awesome-icon icon="house-user" class="icons" /><span class="badge rounded-pill bg-info float-end">04</span>
-                        <span key="t-dashboards">Dashboards</span>
+                        <font-awesome-icon icon="house-user" class="icons" />
+                        <span key="t-dashboards">Dashboard</span>
                     </a></router-link>
                 </li>
 

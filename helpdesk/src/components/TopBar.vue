@@ -225,34 +225,36 @@
             </div>
 
             <div class="dropdown d-none d-lg-inline-block ms-1">
+                <router-link to="/addnewticket">
                 <button type="button" class="btn header-item noti-icon waves-effect"
                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="bx bx-customize"></i>
                 </button>
+                </router-link>
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
                     <div class="px-lg-2">
                         <div class="row g-0">
-                            <div class="col">
+                            <!-- <div class="col">
                                 <a class="dropdown-icon-item" href="#">
                                     <img src="assets/images/brands/github.png" alt="Github">
                                     <span>GitHub</span>
                                 </a>
-                            </div>
-                            <div class="col">
+                            </div> -->
+                            <!-- <div class="col">
                                 <a class="dropdown-icon-item" href="#">
                                     <img src="assets/images/brands/bitbucket.png" alt="bitbucket">
                                     <span>Bitbucket</span>
                                 </a>
-                            </div>
-                            <div class="col">
+                            </div> -->
+                            <!-- <div class="col">
                                 <a class="dropdown-icon-item" href="#">
                                     <img src="assets/images/brands/dribbble.png" alt="dribbble">
                                     <span>Dribbble</span>
                                 </a>
-                            </div>
+                            </div> -->
                         </div>
 
-                        <div class="row g-0">
+                        <!-- <div class="row g-0">
                             <div class="col">
                                 <a class="dropdown-icon-item" href="#">
                                     <img src="assets/images/brands/dropbox.png" alt="dropbox">
@@ -271,7 +273,7 @@
                                     <span>Slack</span>
                                 </a>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -286,7 +288,7 @@
                 <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-notifications-dropdown"
                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="bx bx-bell bx-tada"></i>
-                    <span class="badge bg-danger rounded-pill">3</span>
+                    <span class="badge bg-danger rounded-pill">6</span>
                 </button>
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
                     aria-labelledby="page-header-notifications-dropdown">
@@ -368,7 +370,7 @@
                     </div>
                 </div>
             </div>
-
+<!-- profile -->
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
