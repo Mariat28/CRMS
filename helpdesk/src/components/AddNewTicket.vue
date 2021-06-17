@@ -17,8 +17,11 @@
             </div>
             <div class="card-body pt-0 mt-3">
                 <form>
+                    <p>All Fields marked with * are compulsory</p>
                     <div class="mb-3">
-                        <label for="formrow-firstname-input" class="form-label" Required>Contact</label>
+                        <label for="formrow-firstname-input" class="form-label form-group-required" Required>Contact
+                            <font-awesome-icon icon="asterisk" class="required fa-2x"/>
+                        </label>
                         <input type="text" class="form-control" id="formrow-firstname-input">
                     </div>
                     <div class="mb-3">
@@ -41,13 +44,13 @@
                                             <div class="row">
                                                 <div class="col-lg-4">
                                                     <div class="mb-3">
-                                                        <label for="formrow-inputCity" class="form-label">City</label>
+                                                        <label for="formrow-inputCity" class="form-label">Agent</label>
                                                         <input type="text" class="form-control" id="formrow-inputCity">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-4">
                                                     <div class="mb-3">
-                                                        <label for="formrow-inputState" class="form-label">State</label>
+                                                        <label for="formrow-inputState" class="form-label">Group</label>
                                                         <select id="formrow-inputState" class="form-select">
                                                             <option selected>Choose...</option>
                                                             <option>...</option>
@@ -73,16 +76,14 @@
                                                 </div>
                                             </div>
                                             <div>
-                                                <button type="submit" class="btn btn-primary w-md">Submit</button>
+                                                <a
+                                                    href="javascript: void(0);"
+                                                    class="btn btn-primary waves-effect waves-light w-md" type="submit"
+                                                    >Add Ticket <i class="mdi mdi-arrow-right ms-1"></i
+                                                ></a>
                                             </div>
                                         </form>
-                <div class="mt-4">
-                    <a
-                        href="javascript: void(0);"
-                        class="btn btn-primary waves-effect waves-light btn-sm"
-                        >Add Ticket <i class="mdi mdi-arrow-right ms-1"></i
-                    ></a>
-                </div>
+
             </div>
           </div>
         </div>
@@ -100,5 +101,8 @@ export default {
 <style scoped>
 .content {
   margin-left: 240px;
+}
+.required{
+    font-size: 9px;
 }
 </style>
