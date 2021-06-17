@@ -12,7 +12,7 @@
                 <li>
                     <router-link to="/">
                     <a href="javascript: void(0);" class="waves-effect">
-                        <i class="bx bx-home-circle"></i><span class="badge rounded-pill bg-info float-end">04</span>
+                        <font-awesome-icon icon="house-user" class="icons" /><span class="badge rounded-pill bg-info float-end">04</span>
                         <span key="t-dashboards">Dashboards</span>
                     </a></router-link>
                 </li>
@@ -29,8 +29,8 @@
                  <li>
                      <router-link to="/settings">
                     <a href="javascript: void(0);" class=" waves-effect">
-                        <i class="bx bx-layout"></i>
-                        <span key="t-layouts">Settings</span><font-awesome-icon icon="cogs" class="dash-icons"/>
+                        <font-awesome-icon icon="cog" class="icons" />
+                        <span key="t-layouts">Settings</span><font-awesome-icon icon="caret-right" class="dash-icons"/>
                     </a></router-link>
                     
                 </li>
@@ -354,7 +354,7 @@ export default {
 </script>
 <style scoped>
 .dash-icons{
-    margin-left: 50px;
+    margin-left: 60px;
 }
 .caret{
     margin-left: 70px;
