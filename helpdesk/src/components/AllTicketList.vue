@@ -3,6 +3,7 @@
     <div id="main-content">
         <div class="page-content">
             <div class="container-fluid">
+                
                 <div class="card"  v-for="(ticket, index) in tickets"  :key="index">
                     <!--<div class="card-header bg-transparent border-bottom">
                         Quote
@@ -40,17 +41,17 @@
                         <div style="display:flex; align-items:center; justify-content:center;" class="col">
                             <div class="card-body">
                                 <div style="display: flex; flex-direction: column">
-                                <select style="width: 120px; outline: none; border: none;" class="custom-select">
+                                <select style="width: 120px; outline: none; border: none;" class="custom-select custom-select-sm">
                                     <option selected>Low</option>
                                     <option value="1">Medium</option>
                                     <option value="2">High</option>
                                 </select>
-                                <select style="width: 120px; outline: none; border: none;" class="custom-select">
+                                <select style="width: 120px; outline: none; border: none;" class="custom-select custom-select-sm">
                                     <option selected>Accounting</option>
                                     <option value="1">Technical</option>
                                     <option value="2">Finance</option>
                                 </select>
-                                <select style="width: 120px; outline: none; border: none;" class="custom-select">
+                                <select style="width: 120px; outline: none; border: none;" class="custom-select custom-select-sm">
                                     <option selected>Open</option>
                                     <option value="1">Pending</option>
                                     <option value="2">Forwarded</option>
@@ -144,5 +145,11 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+select option {
+  margin: 40px;
+  background: rgba(255,255,255);
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
 }
 </style>
