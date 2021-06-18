@@ -175,13 +175,16 @@
 <script>
 export default {
     name:'TopBar',
+    
         methods:{
         toggleSidebar(){
            let toggler = document.getElementById("toggler");
             toggler.classList.add("sidebar-enable");  
-            toggler.classList.add("vertical-collpsed");  
+            toggler.classList.add("vertical-collpsed"); 
 
-        }
+        },
+        
+        
     }
 }
 </script>
