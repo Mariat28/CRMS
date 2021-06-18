@@ -37,18 +37,28 @@
 
             <div class="dropdown dropdown-menu-right d-none d-lg-block ms-2">
                 <button type="button" class="btn header-item waves-effect "  data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
-                    <span key="t-megamenu">New Tickets</span>
+                    <span key="t-megamenu">{{ currentTicketCategory }}</span>
                     <i class="mdi mdi-chevron-down"></i> 
                 </button>
                 <div class="dropdown-menu " aria-labelledby="tickets-menu">
-                <router-link to="/tickets">
-                    <a class="dropdown-item">All Tickets</a>
+                <router-link to="/NewTickets">
+                    <a class="dropdown-item" data-value="New Tickets" @click="fetchTickets('New Tickets')">New Tickets</a>
                 </router-link>
-                    <a class="dropdown-item" data-value="Open Tickets">Open Tickets</a>
-                    <a class="dropdown-item" data-value="Pending Tickets">Pending Tickets</a>
-                    <a class="dropdown-item" data-value="Tickets assigned to me">Tickets assigned to me</a>
-                    <a class="dropdown-item" data-value="Closed Tickets">Closed Tickets</a>
-
+                <router-link to="/AllTickets">
+                    <a class="dropdown-item" @click="fetchTickets('All Tickets')">All Tickets</a>
+                </router-link>
+                <router-link to="/OpenTickets">
+                    <a class="dropdown-item" data-value="Open Tickets" @click="fetchTickets('Open Tickets')">Open Tickets</a>
+                </router-link>
+                <router-link to="/PendingTickets">
+                    <a class="dropdown-item" data-value="Pending Tickets" @click="fetchTickets('Pending Tickets')">Pending Tickets</a>
+                </router-link>
+                <router-link to="/Ticketsassingedtome">
+                    <a class="dropdown-item" data-value="Tickets assigned to me" @click="fetchTickets('Tickets assigned to me')">Tickets assigned to me</a>
+                </router-link>
+                <router-link to="/ClosedTickets">
+                    <a class="dropdown-item" data-value="Closed Tickets" @click="fetchTickets('Closed Tickets')">Closed Tickets</a>
+                </router-link>
                 </div>
             </div>
         </div>
@@ -173,18 +183,54 @@
   </div>  
 </template>
 <script>
+import Emitter from 'tiny-emitter'
+
 export default {
     name:'TopBar',
-    
-        methods:{
+    data(){
+        return {
+            currentTicketCategory: '',
+            emitter: new Emitter()
+        }
+    },
+    watch(){
+        this.currentTicketCategory
+    },
+    methods:{
         toggleSidebar(){
-           let toggler = document.getElementById("toggler");
+            let toggler = document.getElementById("toggler");
             toggler.classList.add("sidebar-enable");  
             toggler.classList.add("vertical-collpsed"); 
 
         },
-        
-        
-    }
+        fetchTickets(category){
+            this.currentTicketCategory = category
+        },
+        updateDropDown(){
+            if(this.$router.currentRoute._value.path == '/' || this.$router.currentRoute._value.path == '/NewTickets'){
+                this.currentTicketCategory = `New Tickets`
+            }
+            else{
+                this.currentTicketCategory = `${this.$router.currentRoute._value.name}`
+            }
+        }
+    },
+    created() {
+        this.currentTicketCategory = `New Tickets`
+    },
+    mounted() {
+        this.updateDropDown()
+
+        this.emitter.on('updateTheDropDowns', function(nodata){
+            this.currentTicketCategory = "New Tickets"
+            console.log("Event Captured" + nodata)
+        })
+    },
 }
 </script>
+
+<style scoped>
+.dropdown-item:hover {
+    cursor: pointer;
+}
+</style>

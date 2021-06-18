@@ -16,20 +16,6 @@ export default {
         return {
             tickets:[
                 {
-                    subject:"I need an exchange item",
-                    firstname:"Ruth",
-                    lastname: 'Mitchel',
-                    title:"my money",
-                    isRead: false
-                },
-                {
-                    subject:"How can I get a refund for my order?",
-                    firstname:"Mugisha",
-                    lastname: 'Edison',
-                    title:"my money",
-                    isRead: true
-                },
-                {
                     subject:"My return was not picked up",
                     firstname:"Mulungi",
                     lastname: 'Faith',

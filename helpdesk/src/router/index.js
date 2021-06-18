@@ -8,9 +8,34 @@ const routes = [
     component: Home
   },
   {
-    path: '/tickets',
-    name: 'Tickets',
+    path: '/AllTickets',
+    name: 'All Tickets',
     component: () => import(/* webpackChunkName: "Tickets" */ '../views/Tickets.vue')
+  },
+  {
+    path: '/NewTickets',
+    name: 'New Tickets',
+    component: () => import(/* webpackChunkName: "Tickets" */ '../views/NewTickets.vue')
+  },
+  {
+    path: '/OpenTickets',
+    name: 'Open Tickets',
+    component: () => import(/* webpackChunkName: "Tickets" */ '../views/OpenTickets.vue')
+  },
+  {
+    path: '/PendingTickets',
+    name: 'Pending Tickets',
+    component: () => import(/* webpackChunkName: "Tickets" */ '../views/PendingTickets.vue')
+  },
+  {
+    path: '/Ticketsassingedtome',
+    name: 'Tickets assinged to me',
+    component: () => import(/* webpackChunkName: "Tickets" */ '../views/MyAssignedTickets.vue')
+  },
+  {
+    path: '/ClosedTickets',
+    name: 'Closed Tickets',
+    component: () => import(/* webpackChunkName: "Tickets" */ '../views/ClosedTickets.vue')
   },
   {
     path: '/addnewticket',

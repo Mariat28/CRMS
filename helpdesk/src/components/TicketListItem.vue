@@ -1,10 +1,5 @@
 <template>
-<div class="content">
-    <div id="main-content">
-        <div class="page-content">
-            <div class="container-fluid">
-                
-                <div class="card"  v-for="(ticket, index) in tickets"  :key="index">
+    <div class="card">
                     <!--<div class="card-header bg-transparent border-bottom">
                         Quote
                     </div>-->
@@ -63,61 +58,19 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
 </template>
 
 <script>
 import TicketAction from '@/components/TicketAction.vue'
 
 export default {
-    name: "AllTicketList",
+    name: 'TicketListItem',
     components: {
-        TicketAction,
+        TicketAction
     },
-    data() {
-        return {
-            tickets:[
-                {
-                    subject:"I need an exchange item",
-                    firstname:"Ruth",
-                    lastname: 'Mitchel',
-                    title:"my money",
-                    isRead: false
-                },
-                {
-                    subject:"How can I get a refund for my order?",
-                    firstname:"Mugisha",
-                    lastname: 'Edison',
-                    title:"my money",
-                    isRead: true
-                },
-                {
-                    subject:"My return was not picked up",
-                    firstname:"Mulungi",
-                    lastname: 'Faith',
-                    title:"my money",
-                    isRead: true
-                },
-                {
-                    subject:"Status of my replacement",
-                    firstname:"Mukisa",
-                    lastname: 'Ethern',
-                    title:"my money",
-                    isRead: false
-                },
-                {
-                    subject:"Need to change my shipping address",
-                    firstname:"Kyazze",
-                    lastname: 'Kevin',
-                    title:"my money",
-                    isRead: true
-                },
-            ]
-        }
-    },
+    props: {
+        ticket: Object
+    }
 }
 </script>
 
@@ -129,7 +82,9 @@ export default {
 .ticket-actions-container {
     margin-bottom: 2px;
 }
-
+select, option {
+    color: #74788d !important;
+}
 .customer-avatar {
     background: #f3f1f1;
     border-radius: 50%;
@@ -145,11 +100,5 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-select option {
-  margin: 40px;
-  background: rgba(255,255,255);
-  color: #fff;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
 }
 </style>

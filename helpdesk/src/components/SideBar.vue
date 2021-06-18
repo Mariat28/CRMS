@@ -12,16 +12,17 @@
                 <li>
                     <router-link to="/">
                     <a href="javascript: void(0);" class="waves-effect">
-                        <font-awesome-icon icon="house-user" class="icons" />
+                        <!--<font-awesome-icon icon="house-user" class="icons" />-->
+                        <i class="fas fa-cubes" id="dashboard-icon"></i>
                         <span key="t-dashboards">Dashboard</span>
                     </a></router-link>
                 </li>
 
                 <li>
-                     <router-link to="/tickets">
-                    <a href="javascript: void(0);" class=" waves-effect">
+                     <router-link to="/NewTickets">
+                    <a href="javascript: void(0);" class=" waves-effect" @click="tellTopBarToUpdate">
                         <font-awesome-icon icon="ticket-alt" class="icons" />
-                        <span key="t-layouts">Tickets<font-awesome-icon icon="caret-right" class="caret"/>
+                        <span key="t-layouts">Tickets<!--<font-awesome-icon icon="caret-right" class="caret"/>-->
                     </span>
                     </a></router-link>
                     
@@ -30,7 +31,7 @@
                      <router-link to="/settings">
                     <a href="javascript: void(0);" class=" waves-effect">
                         <font-awesome-icon icon="cog" class="icons" />
-                        <span key="t-layouts">Settings</span><font-awesome-icon icon="caret-right" class="dash-icons"/>
+                        <span key="t-layouts">Settings</span><!--<font-awesome-icon icon="caret-right" class="dash-icons"/>-->
                     </a></router-link>
                     
                 </li>
@@ -348,9 +349,20 @@
 </div>
 </template>
 <script>
+import Emitter from 'tiny-emitter'
+
 export default {
     name:'SideBar',
-
+    data(){
+        return {
+            emitter: new Emitter()
+        }
+    },
+    methods:{
+        tellTopBarToUpdate(){
+            this.emitter.emit('updateTheDropDowns', 'nodata')
+        }
+    },
 }
 </script>
 <style scoped>
@@ -370,6 +382,11 @@ export default {
   margin-right: 10px !important;
   margin-left: -20px;
     font-size: 20px;
+}
+#dashboard-icon{
+    position: relative;
+    margin-left: -20px !important;
+    color: #a6b0cf !important;
 }
 .router-link-active .bx{
 color: white;

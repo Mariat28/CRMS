@@ -36,20 +36,6 @@ export default {
                     title:"my money",
                     isRead: true
                 },
-                {
-                    subject:"Status of my replacement",
-                    firstname:"Mukisa",
-                    lastname: 'Ethern',
-                    title:"my money",
-                    isRead: false
-                },
-                {
-                    subject:"Need to change my shipping address",
-                    firstname:"Kyazze",
-                    lastname: 'Kevin',
-                    title:"my money",
-                    isRead: true
-                },
             ]
         }
     },
