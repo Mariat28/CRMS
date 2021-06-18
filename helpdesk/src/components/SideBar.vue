@@ -12,7 +12,8 @@
                 <li>
                     <router-link to="/">
                     <a href="javascript: void(0);" class="waves-effect">
-                        <font-awesome-icon icon="house-user" class="icons" />
+                        <!--<font-awesome-icon icon="house-user" class="icons" />-->
+                        <i class="fas fa-cubes" id="dashboard-icon"></i>
                         <span key="t-dashboards">Dashboard</span>
                     </a></router-link>
                 </li>
@@ -370,6 +371,11 @@ export default {
   margin-right: 10px !important;
   margin-left: -20px;
     font-size: 20px;
+}
+#dashboard-icon{
+    position: relative;
+    margin-left: -20px !important;
+    color: #a6b0cf !important;
 }
 .router-link-active .bx{
 color: white;
