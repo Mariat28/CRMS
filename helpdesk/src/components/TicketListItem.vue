@@ -1,5 +1,6 @@
 <template>
-    <div class="card">
+    <div class="ticket-item-container">
+        <div class="card">
                     <!--<div class="card-header bg-transparent border-bottom">
                         Quote
                     </div>-->
@@ -20,8 +21,8 @@
                                 </p>
                                 
                                 <blockquote class="card-blockquote mb-0">
-                                    <p v-if="!ticket.isRead" style="font-weight: 600;">{{ ticket.subject }}</p>
-                                    <p v-if="ticket.isRead">{{ ticket.subject }}</p>
+                                    <p @mouseover="showTicketDetails" @mouseout="hideTicketDetailsFromTitle($event)" v-if="!ticket.isRead" style="font-weight: 600;">{{ ticket.subject }}</p>
+                                    <p @mouseover="showTicketDetails($event)" @mouseout="hideTicketDetailsFromTitle($event)" v-if="ticket.isRead">{{ ticket.subject }}</p>
                                     <footer class="font-size-12 mt-0">
                                         {{ ticket.firstname }} {{ ticket.lastname }} 
                                         <span style="font-weight: bold;font-size: 18px; position:relative; bottom: 2px; margin-left: 3px; margin-right:3px;">.</span>
@@ -57,7 +58,12 @@
                         </div> 
                         </div>
                     </div>
-                </div>
+        </div>
+
+        <div @mouseout="hideTicketDetails($event)" class="card details hide-details">
+
+        </div>
+    </div>
 </template>
 
 <script>
@@ -69,8 +75,19 @@ export default {
         TicketAction
     },
     props: {
-        ticket: Object
-    }
+        ticket: Object,
+    },
+    methods: {
+        showTicketDetails(e){
+            e.srcElement.parentElement.parentElement.parentElement.parentElement.parentElement.nextSibling.classList.remove('hide-details')
+        },
+        hideTicketDetailsFromTitle(e){
+            e.srcElement.parentElement.parentElement.parentElement.parentElement.parentElement.nextSibling.classList.add('hide-details')
+        },
+        hideTicketDetails(e){
+            e.srcElement.classList.add('hide-details')
+        }
+    },
 }
 </script>
 
@@ -100,5 +117,28 @@ select, option {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.ticket-item-container {
+    position: relative;
+}
+.ticket-item-container .details {
+    position: absolute;
+    width: 100%;
+}
+blockquote:hover {
+    cursor: pointer;
+    opacity: .8;
+}
+.details {
+    height: 200px;
+    width: 45% !important;
+    left: 10%;
+    background: #FFF;
+    top: 60px;
+    border-radius: 0 5px 5px 5px;
+    z-index: 5;
+}
+.hide-details{
+    display:none;
 }
 </style>

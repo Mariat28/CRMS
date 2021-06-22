@@ -3,7 +3,7 @@
     <div id="main-content">
         <div class="page-content">
             <div class="container-fluid">
-                <div v-for="(ticket, index) in tickets" :key="index">
+                <div style="position:relative" v-for="(ticket, index) in tickets" :key="index">
                     <ticketlistitem v-bind:ticket="ticket"/>
                 </div>
             </div>
