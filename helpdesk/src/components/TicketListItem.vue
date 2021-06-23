@@ -5,10 +5,10 @@
                         Quote
                     </div>-->
       <div class="row">
+        <!-- checkbox -->
         <div
-          style="display: flex; align-items: center; justify-content: center"
-          class="col-1"
-        >
+          style=""
+          class="col-1 mt-5">
           <div style="display: flex">
             <div
               style="margin-left: 15px; margin-right: 10px"
@@ -26,7 +26,7 @@
             </div>
           </div>
         </div>
-        <div class="col-9">
+        <div class="col-8 ">
           <div class="card-body">
             <p
               v-if="ticket.status != 'Closed'"
@@ -135,16 +135,14 @@
             </blockquote>
           </div>
         </div>
-        <div class="col">
+        <div class="col-lg-3">
+          
           <div
-            style="display: flex; align-items: center; justify-content: center"
-            class="col"
           >
-            <div class="card-body">
-              <div style="display: flex; flex-direction: column">
+            <div class="drop mt-3 ml-3">
+              <div >
                 <select
                   style="width: 120px; outline: none; border: none"
-                  class="custom-select custom-select-sm"
                 >
                   <option selected>Low</option>
                   <option value="1">Medium</option>
@@ -152,7 +150,7 @@
                 </select>
                 <select
                   style="width: 120px; outline: none; border: none"
-                  class="custom-select custom-select-sm"
+                  
                 >
                   <option selected>Accounting</option>
                   <option value="1">Technical</option>
@@ -160,7 +158,7 @@
                 </select>
                 <select
                   style="width: 120px; outline: none; border: none"
-                  class="custom-select custom-select-sm"
+                  
                 >
                   <option selected>{{ ticket.status }}</option>
                   <option value="1">Pending</option>
@@ -317,12 +315,12 @@ option {
 .customer-avatar {
   background: #f3f1f1;
   border-radius: 50%;
-  width: 40px;
+  width: 90px;
   height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 15px;
+  margin-left: 0px;
 }
 .form-check {
   height: 40px;
@@ -372,4 +370,8 @@ svg {
   width: 10px;
   height: 10px;
 }
+.drop{
+  float: right;
+}
+
 </style>
