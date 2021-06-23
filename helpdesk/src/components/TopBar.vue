@@ -24,7 +24,8 @@
             </div>
 
             <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn">
-                <i class="fa fa-fw fa-bars" @click="toggleSidebar" id="toggler"></i>
+                <svg @click="toggleSidebar" id="toggler" xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" class="app-icon app-icon--dark cursor-pointer"><path d="M70.4 87.9H30.3c-4 0-7.3 3.3-7.3 7.3s3.3 7.3 7.3 7.3h40.1c4 0 7.3-3.3 7.3-7.3-.1-4-3.3-7.3-7.3-7.3zm27.8-30.8h-68c-4 0-7.3 3.3-7.3 7.3s3.3 7.3 7.3 7.3h68c4 0 7.3-3.3 7.3-7.3s-3.3-7.3-7.3-7.3zM30.3 40.6h68c4 0 7.3-3.3 7.3-7.3s-3.3-7.3-7.3-7.3h-68c-4 0-7.3 3.3-7.3 7.3 0 4.1 3.3 7.3 7.3 7.3z"></path></svg>
+                <!--<i class="fa fa-fw fa-bars" @click="toggleSidebar" id="toggler"></i>-->
             </button>
 
             <!-- App Search-->
@@ -232,5 +233,10 @@ export default {
 <style scoped>
 .dropdown-item:hover {
     cursor: pointer;
+}
+svg{
+    width: 22px;
+    height: 22px;
+    fill: #555b6d;
 }
 </style>
