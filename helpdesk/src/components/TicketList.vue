@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import ticketlistitem from '@/components/TicketListItem.vue'
+import ticketlistitem from '@/components/TicketListItem.vue';
 
 export default {
     name: "AllTicketList",
@@ -23,6 +23,7 @@ export default {
     components: {
         ticketlistitem,
     },
+ 
 }
 </script>
 

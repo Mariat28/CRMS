@@ -1,13 +1,13 @@
 import { createApp } from 'vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
-import 'jquery'
+// import 'jquery'
 import 'popper.js'
 import './assets/css/app.css';
 import './assets/css/bootstrap.min.css';
 import './assets/css/app.min.css'
 import './assets/css/icons.min.css';
-import 'metismenu'
+// import 'metismenu'
 import Toasted from "@meforma/vue-toaster";
 import 'simplebar/dist/simplebar.min.css';
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -22,6 +22,6 @@ library.add(faUserSecret, faCaretRight, faUsers, faUser, faCogs, faBan, faTicket
 
 createApp(App).
 component('font-awesome-icon', FontAwesomeIcon).use(Toasted,{
-    position: "top-right",
+    position: "bottom-right",
 }).
 use(store).use(router).mount('#app')

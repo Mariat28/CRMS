@@ -2,8 +2,8 @@
 <div>
     <TopBar/>
     <SideBar/>
-  </div>
   <router-view/>
+  </div>
 </template>
 <script>
 import SideBar from '@/components/SideBar.vue'

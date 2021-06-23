@@ -57,11 +57,15 @@
                         </div> 
                         </div>
                     </div>
+                    <div v-for="ticket in ticketList" :key="ticket.id">
+                   TicketList: {{ticket.body}}
+                    </div>
                 </div>
 </template>
 
 <script>
 import TicketAction from '@/components/TicketAction.vue'
+import axios from 'axios';
 
 export default {
     name: 'TicketListItem',
@@ -70,6 +74,18 @@ export default {
     },
     props: {
         ticket: Object
+    },
+       data(){
+        return {
+            ticketList:[],
+        }
+    },
+    async created(){
+        const data=axios
+        .get('http://127.0.0.1:8000/api/ticketList')
+        .then(response=>( this.ticketList =  response.data));
+        this.ticketList.push(data);
+    
     }
 }
 </script>

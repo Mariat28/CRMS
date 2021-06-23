@@ -11,7 +11,7 @@
                 </div>
             </div>
             <div class="card-body pt-0 mt-3">
-                <form>
+                <form method="POST" @submit.prevent="addTicket">
                     <p>All Fields marked with * are compulsory</p>
                     <div class="mb-3">
                         <label for="formrow-firstname-input" class="form-label form-group-required" Required>Name
@@ -22,6 +22,10 @@
                     <div class="mb-3">
                         <label for="formrow-email-input" class="form-label">Email</label>
                         <input type="email" class="form-control" name="email"  id="formrow-email-input" v-model="ticket.email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="formrow-phone-input" class="form-label">Phone</label>
+                        <input type="phone" class="form-control" name="phone"  id="formrow-phone-input" v-model="ticket.phone">
                     </div>
                     <div class="mb-3">
                         <label for="formrow-company-input" class="form-label">Company</label>
@@ -52,9 +56,9 @@
                     <div class="row">
                         <div class="col-lg-4 ">
                             <div class="mb-3">
-                                <label for="formrow-inputStatus" class="form-label">status</label>
+                                <label for="formrow-inputStatus" class="form-label">Status</label>
                                 <select id="formrow-inputStatus" class="form-select" v-model="ticket.status">
-                                    <option selected>Open</option>
+                                    <option>Open</option>
                                     <option>Pending</option>
                                     <option>Closed</option>
                                 </select>
@@ -91,12 +95,12 @@
                     <div class="mb-3">
                         <label for="formrow-group" class="form-label">Description</label>
                         <div>
-                        <textarea required class="form-control" name="description" rows="8" v-model="ticket.description"></textarea>
+                        <textarea required class="form-control" name="body" rows="8" v-model="ticket.body"></textarea>
                         </div>
                     </div>
                     <div>
                         <a
-                            href="javascript: void(0);" @click="addTicket"
+                            @click="addTicket"
                             class="btn form-btn btn-primary waves-effect waves-light w-md" type="submit"
                             >Create<i class="mdi mdi-arrow-right ms-1"></i
                         ></a>
@@ -121,9 +125,9 @@
                 </div>
                   <div class="row contact-div">
                         <div class="details-div col-md-9">
-                            <p>Name: <strong>{{ticket.name}}</strong></p>
-                            <p>Email: <strong>{{ticket.email}} </strong></p>
-                            <p>Phone: <strong>{{ticket.phone}}</strong></p>
+                            <p>Name:</p> <strong>{{ticket.name}}</strong>
+                            <p>Email:</p> <strong>{{ticket.email}} </strong>
+                            <p>Phone:</p> <strong>{{ticket.phone}}</strong>
 
                         </div>
                             <div class="col-md-3"><font-awesome-icon icon="user" class="icons text-primary"/></div>
@@ -138,16 +142,28 @@
   </div>
 </template>
 <script>
+import axios from 'axios';
+// import { constants } from 'zlib';
 export default {
   name: "AddNewTicket",
   data(){
       return {
-          ticket: {}
+          ticket:{ },
+
       }
   },
   methods:{
-      addTicket(){
-    this.$toast.success("Ticket successfully added..!",{
+      async addTicket(){  
+          const endpoint='http://127.0.0.1:8000/api/addticket'
+          await axios.post(endpoint, this.ticket).then(()=>{
+              console.log(this.ticket); 
+          }). catch((err) => console.log(err));
+               this.ticket={
+                    name:" ",
+                    phone:' ',
+                    body:' '
+               },  
+            this.$toast.success("Ticket successfully added..!",{
 
    action : {
         text : 'Cancel',
@@ -161,6 +177,7 @@ export default {
     
       }
   }
+  
 };
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -181,18 +198,18 @@ export default {
     margin-top: 30px;
 }
 .details-div{
-    margin-top: 20px;
+    margin-top: 0px;
     color: grey;
 }
 strong{
-    margin-left: 30px;
+    margin-left: 0px;
 }
 .contact-div{
     margin-top: 30px;
 }
 .contact-card{
     border-radius: 25px;
-    width:320px;
+    width:330px;
     height: 300px;
     margin-left: 30px;
     
