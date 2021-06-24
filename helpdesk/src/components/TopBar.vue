@@ -208,7 +208,7 @@ export default {
             this.currentTicketCategory = category
         },
         updateDropDown(){
-            if(this.$router.currentRoute._value.path == '/' || this.$router.currentRoute._value.path == '/NewTickets'){
+            if(this.$router.currentRoute._value.path == '/home' || this.$router.currentRoute._value.path == '/NewTickets'){
                 this.currentTicketCategory = `New Tickets`
             }
             else{
@@ -238,5 +238,8 @@ svg{
     width: 22px;
     height: 22px;
     fill: #555b6d;
+}
+a{
+    color:black;
 }
 </style>

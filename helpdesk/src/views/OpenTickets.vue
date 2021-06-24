@@ -1,15 +1,21 @@
 <template>
   <div>
+    <TopBar/>
+    <SideBar/>
     <TicketList v-bind:tickets="tickets"/>
   </div>
 </template>
 <script>
 
-import TicketList from '@/components/TicketList.vue'
+import TicketList from '@/components/TicketList.vue';
+import SideBar from '@/components/SideBar.vue'
+import TopBar from '@/components/TopBar.vue'
 
 export default {
   name:'AllTickets',
   components: {
+    TopBar,
+    SideBar,
     TicketList
   },
   data() {

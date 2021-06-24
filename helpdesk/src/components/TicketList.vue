@@ -3,13 +3,13 @@
     <div id="main-content">
         <div class="page-content">
             <div class="container-fluid">
-                <div>
-                      <input type="checkbox" class="form-check-input mt-1" id="exampleCheck1">Select All
-                    <a class="btn btn-light border-secondary btn-sm"><i class="fa fa-user-plus"></i>Assign</a>
-                    <a class="btn btn-light border-secondary btn-sm"> <i class="fa fa-ban"></i>Close</a>
-                    <a class="btn btn-light border-secondary btn-sm"><i class="fa fa-object-group"></i>Merge</a>
-                    <a class="btn btn-light border-secondary btn-sm"><i class="fa fa-trash-alt"></i>Delete</a>
-                    <!-- <a class="btn btn-light border-secondary btn-sm">Merge</a> -->
+                <div class="actions mb-3">
+                      <input type="checkbox" class="form-check-input select-check" id="exampleCheck1" @click="selectAll"><span>Select All</span>
+                    <a class="btn btn-light border-secondary btn-sm d-none" id="action"><i class="fa fa-user-plus"></i>Assign</a>
+                    <a class="btn btn-light border-secondary btn-sm d-none" id="action"> <i class="fa fa-ban"></i>Close</a>
+                    <a class="btn btn-light border-secondary btn-sm d-none" id="action"><i class="fa fa-object-group"></i>Merge</a>
+                    <a class="btn btn-light border-secondary btn-sm d-none" id="action"><i class="fa fa-trash-alt"></i>Delete</a>
+                    <a class="text-danger d-none" id="cancel-link" @click="deselect">Cancel</a>
 
                 </div>
                 <div class="row">
@@ -93,32 +93,65 @@
 </template>
 
 <script>
-import ticketlistitem from '@/components/TicketListItem.vue';
+import ticketlistitem from "@/components/TicketListItem.vue";
 
 export default {
-    name: "AllTicketList",
-    props: {
-        tickets: Object
+  name: "AllTicketList",
+  props: {
+    tickets: Object
+  },
+  components: {
+    ticketlistitem
+  },
+  methods: {
+    selectAll() {
+      let check = document.getElementsByClassName("form-check-input");
+      for (let i = 0; i < check.length; i++) {
+        if (check[i].type == "checkbox") {
+          check[i].checked = true;
+        }
+      }
+      let actions = document.querySelectorAll(".btn.d-none");
+      for (let x = 0; x <= actions.length; x++) {
+        actions[x].classList.remove("d-none");
+        document.getElementById("cancel-link").classList.remove("d-none");
+      }
     },
-    components: {
-        ticketlistitem,
-    },
- 
-}
+    deselect(){
+         let check = document.getElementsByClassName("form-check-input");
+      for (let i = 0; i < check.length; i++) {
+        if (check[i].type == "checkbox") {
+          check[i].checked = false;
+        }
+      }
+      let actions = document.querySelectorAll(".btn.btn-light");
+      for (let x = 0; x <= actions.length; x++) {
+        actions[x].classList.add("d-none");
+        document.getElementById("cancel-link").classList.add("d-none");
+      }
+    }
+  }
+};
 </script>
 
 <style scoped>
-
-label{
-    font-size: 12px;
+label {
+  font-size: 12px;
 }
-.btn{
-    margin-left: 10px;
-    margin-bottom: 10px;
+.btn {
+  margin-left: 10px;
+  margin-bottom: 10px;
 }
-i{
-    padding-right:5px;
-
+i {
+  padding-right: 5px;
 }
-
+.select-check {
+  margin-top: 3px;
+}
+#cancel-link {
+  margin-left: 10px;
+}
+#cancel-link:hover {
+  cursor: pointer;
+}
 </style>

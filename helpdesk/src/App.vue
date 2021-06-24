@@ -1,18 +1,18 @@
 <template>
 <div>
-    <TopBar/>
-    <SideBar/>
+    <!-- <TopBar/>
+    <SideBar/> -->
   <router-view/>
   </div>
 </template>
 <script>
-import SideBar from '@/components/SideBar.vue'
-import TopBar from '@/components/TopBar.vue'
+// import SideBar from '@/components/SideBar.vue'
+// import TopBar from '@/components/TopBar.vue'
 
 export default {
   components:{
-SideBar,
-TopBar,
+// SideBar,
+// TopBar,
   },
   props: {
     msg: String

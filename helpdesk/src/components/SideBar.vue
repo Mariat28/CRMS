@@ -10,7 +10,7 @@
                 <li class="menu-title" key="t-menu">Menu</li>
 
                 <li>
-                    <router-link to="/">
+                    <router-link to="/home">
                     <a href="javascript: void(0);" class="waves-effect">
                         <!--<font-awesome-icon icon="house-user" class="icons" />-->
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="nav-icon" focusable="false">
